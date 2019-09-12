@@ -1,14 +1,26 @@
 import React from "react";
+import { Card, CardBody, CardTitle, CardText, CardImg, Col } from "reactstrap";
+
 
 const NASACards = props => {
     return (
-      <div className="card-list " key={props.date}>
-        <h2>{props.title}</h2>
-        <p>{props.desc}</p>
-        <img src={props.img} style={{height: "50%", width: "50%", padding: "0 100px"}} alt="cosmos"  ></img>
-        <p>{props.credit}</p>
-        <h2>Photo Date: {props.date}</h2>
-      </div>
+      <Col xs="6" sm="4">
+        <Card>
+           <CardImg
+        top width="100%"
+        src={props.img}
+        alt="NASA img"
+        />
+        <CardBody>
+          <CardTitle>{props.title}</CardTitle>
+        <CardText>{props.desc}</CardText>
+        <CardText>{props.credit}</CardText>
+        <CardText>Photo Date: {props.date}</CardText>
+        </CardBody>
+        </Card>
+       
+        
+      </Col>
     );
   };
 
