@@ -12,6 +12,7 @@ function App() {
   const [img, setImg] = useState("");
   const [desc, setDesc] = useState("");
   const [credit, setCredit] = useState("");
+  
 
   useEffect(() =>{
     axios 
@@ -29,16 +30,13 @@ function App() {
         console.log("The data was not returned", error);
     });
 }, []);
+
   return (
     <div className="App">
       <DropDown />
       <nav className="navigation">
         <a href="Picture">Picture of the day</a>
       </nav>
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label="Rocket">🚀</span>!
-      </p>
       <NASAList date={date} img={img} title={title} desc={desc} credit={credit} />
       
     </div>
